@@ -3,5 +3,9 @@
 version = 3
 
 [[package]]
+name = "remove-duplicates-from-sorted-list"
+version = "0.1.0"
+
+[[package]]
 name = "template"
 version = "0.1.0"
