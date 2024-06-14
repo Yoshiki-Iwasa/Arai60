@@ -3,9 +3,13 @@
 version = 3
 
 [[package]]
-name = "remove-duplicates-from-sorted-list"
+name = "data-structure"
 version = "0.1.0"
 
 [[package]]
-name = "template"
+name = "problems"
+version = "0.1.0"
+
+[[package]]
+name = "remove-duplicates-from-sorted-list"
 version = "0.1.0"

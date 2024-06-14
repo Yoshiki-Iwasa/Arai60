@@ -1,4 +1,4 @@
 [workspace]
 resolver="2"
 
-members=["template", "remove-duplicates-from-sorted-list"]
+members=["problems"]
