@@ -45,6 +45,8 @@ impl Carry {
 impl Solution {
     // 繰り返しを使用した実装
     // sentinelをOptionにしてみる
+    // list1, list2のどちらかが続く限りノードが継ぎ足されていくので、sumを表すノードはつねにNillにはならない。
+    // 故にOption<>で表現する必要はない
     pub fn add_two_numbers_loop_sentinel_option(
         mut list1: Option<Box<ListNode>>,
         mut list2: Option<Box<ListNode>>,
@@ -68,7 +70,9 @@ impl Solution {
                         false => Carry::Off,
                     };
 
+                    // sentinelをoptionにしても余計な条件が追加されるだけになる
                     let Some(current_node) = current.as_mut() else {
+                        // unreachable!() とするほうが自然
                         break;
                     };
 
