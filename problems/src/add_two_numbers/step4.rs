@@ -101,7 +101,7 @@ impl Solution {
 
     fn add_numbers(numbers: Vec<Option<Box<ListNode>>>) -> Option<Box<ListNode>> {
         fn add_numbers_recursive(
-            nums: Vec<Option<Box<ListNode>>>,
+            nums: Vec<&Option<Box<ListNode>>>,
             node: &mut Box<ListNode>,
             carry: i32,
         ) {
@@ -111,14 +111,14 @@ impl Solution {
             }
 
             let (nexts, mut sum) =
-                nums.into_iter()
+                nums.iter()
                     .fold((vec![], 0), |(mut nexts, mut sum), current| match current {
                         Some(current_node) => {
                             sum += current_node.val;
 
                             // Noneを排除して、最終的にnextsが空になるようにする
                             if current_node.next.is_some() {
-                                nexts.push(current_node.next)
+                                nexts.push(&current_node.next)
                             }
 
                             (nexts, sum)
@@ -140,7 +140,7 @@ impl Solution {
             val: i32::MIN,
             next: None,
         });
-
+        let numbers = numbers.iter().collect::<Vec<_>>();
         add_numbers_recursive(numbers, &mut sentinel, 0);
 
         sentinel.next
