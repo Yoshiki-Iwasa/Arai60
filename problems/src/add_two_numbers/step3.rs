@@ -13,6 +13,8 @@
   空間計算量: O(n)
 */
 
+use std::borrow::Borrow;
+
 #[derive(PartialEq, Eq, Clone, Debug)]
 pub struct ListNode {
     pub val: i32,

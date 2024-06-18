@@ -90,4 +90,59 @@ impl Solution {
 
         sentinel.unwrap().next // どちらにしてもここでunwrap()する
     }
+
+    // より一般化した解法
+    pub fn add_two_numbers(
+        l1: Option<Box<ListNode>>,
+        l2: Option<Box<ListNode>>,
+    ) -> Option<Box<ListNode>> {
+        Self::add_numbers(vec![l1, l2])
+    }
+
+    fn add_numbers(numbers: Vec<Option<Box<ListNode>>>) -> Option<Box<ListNode>> {
+        fn add_numbers_recursive(
+            nums: Vec<Option<Box<ListNode>>>,
+            node: &mut Box<ListNode>,
+            carry: i32,
+        ) {
+            // リストの数が不明なので、パターンマッチによる基底条件を変更
+            if nums.is_empty() && carry == 0 {
+                return;
+            }
+
+            let (nexts, mut sum) =
+                nums.into_iter()
+                    .fold((vec![], 0), |(mut nexts, mut sum), current| match current {
+                        Some(current_node) => {
+                            sum += current_node.val;
+
+                            // Noneを排除して、最終的にnextsが空になるようにする
+                            if current_node.next.is_some() {
+                                nexts.push(current_node.next)
+                            }
+
+                            (nexts, sum)
+                        }
+                        None => (nexts, sum),
+                    });
+
+            sum += carry;
+
+            node.next = Some(Box::new(ListNode {
+                val: sum % 10,
+                next: None,
+            }));
+
+            add_numbers_recursive(nexts, node.next.as_mut().unwrap(), sum / 10)
+        }
+
+        let mut sentinel = Box::new(ListNode {
+            val: i32::MIN,
+            next: None,
+        });
+
+        add_numbers_recursive(numbers, &mut sentinel, 0);
+
+        sentinel.next
+    }
 }
