@@ -11,6 +11,10 @@
 /*
   時間計算量: O(klogk)
   空間計算量: O(k)
+
+  アルゴリズムイントロダクションを参考にヒープソート実装
+  build_heapするとき、length / 2 のindexを持つノードが
+  末尾のノードの親になるのでここから始めれば十分
 */
 
 use std::{cmp::Reverse, collections::BinaryHeap};
