@@ -23,12 +23,14 @@
   - str.trim_maches('.')やstr.split_once('+')も検討した
     しかし、forで一文字ずつ見ていったほうが一回の走査で終わるためこのままにした
   - 入力がStringなのは自由度が高すぎるので、EmailAddresを型で定義して使いたいと思った
-    local_name部分やdomain部分
+    email addressのvalidationはこれだけでかなり大きなテーマになりそうなので割愛
+    email
+
 
 
 */
 
-use std::collections::HashSet;
+use std::{collections::HashSet, str::FromStr};
 pub struct Solution;
 
 // EmailAddress型の例
@@ -39,9 +41,14 @@ pub struct EmailAddres {
 
 pub struct EmailAddressValidaitonError;
 
-impl EmailAddres {
-    pub fn new(email_address: &str) -> Result<Self, EmailAddressValidaitonError> {
-        let Some((local_name, domain)) = email_address.split_once('@') else {
+// こんな感じで、EmailAddress型を定義したい
+// let email = user_input::parse<EmailAddres>()?
+// みたいな使い勝手にしたい。
+impl FromStr for EmailAddres {
+    type Err = EmailAddressValidaitonError;
+
+    fn from_str(s: &str) -> Result<Self, Self::Err> {
+        let Some((local_name, domain)) = s.split_once('@') else {
             return Err(EmailAddressValidaitonError);
         };
 
@@ -53,7 +60,9 @@ impl EmailAddres {
             domain: domain.to_string(),
         })
     }
+}
 
+impl EmailAddres {
     fn validate_local_name(local_name: &str) -> Result<(), EmailAddressValidaitonError> {
         unimplemented!()
     }
