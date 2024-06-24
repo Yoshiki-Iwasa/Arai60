@@ -51,7 +51,7 @@ impl Solution {
 
         let mut intersection = vec![];
         for n1 in nums1_set {
-            if nmus2_set.contains(n1) {
+            if nums2_set.contains(n1) {
                 intersection.push(*n1)
             }
         }
