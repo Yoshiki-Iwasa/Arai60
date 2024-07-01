@@ -47,7 +47,7 @@ impl Solution {
             graph
                 .entry(node_pair[0] as usize)
                 .or_insert(vec![])
-                .push(node_pair[0] as usize);
+                .push(node_pair[1] as usize);
             graph
                 .entry(node_pair[1] as usize)
                 .or_insert(vec![])
