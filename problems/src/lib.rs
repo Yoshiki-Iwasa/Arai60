@@ -1,4 +1,5 @@
 mod add_two_numbers;
+pub mod find_k_pairs_with_smallest_sums;
 pub mod kth_largest_element_in_a_stream;
 mod remove_duplicates_from_sorted_list;
 mod remove_duplicates_from_sorted_list_ii;
