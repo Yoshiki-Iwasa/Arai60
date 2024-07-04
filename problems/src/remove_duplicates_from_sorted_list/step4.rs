@@ -6,7 +6,7 @@
 // 10分以内に一度もエラーを吐かず正解
 // これを3回連続でできたら終わり
 
-struct Solution;
+pub struct Solution;
 
 // Definition for singly-linked list.
 
@@ -16,6 +16,7 @@ pub struct ListNode {
     pub next: Option<Box<ListNode>>,
 }
 
+#[allow(unused)]
 impl ListNode {
     #[inline]
     fn new(val: i32) -> Self {

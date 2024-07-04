@@ -19,6 +19,7 @@ pub struct ListNode {
     pub next: Option<Box<ListNode>>,
 }
 
+#[allow(unused)]
 impl ListNode {
     #[inline]
     fn new(val: i32) -> Self {
@@ -26,7 +27,7 @@ impl ListNode {
     }
 }
 
-struct Solution;
+pub struct Solution;
 
 enum Carry {
     On,

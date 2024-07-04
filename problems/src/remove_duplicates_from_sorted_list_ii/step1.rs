@@ -18,13 +18,13 @@
   -
 */
 
-
-// #[derive(PartialEq, Eq, Clone, Debug)]
+#[derive(PartialEq, Eq, Clone, Debug)]
 pub struct ListNode {
     pub val: i32,
     pub next: Option<Box<ListNode>>,
 }
 
+#[allow(unused)]
 impl ListNode {
     #[inline]
     fn new(val: i32) -> Self {
@@ -32,9 +32,10 @@ impl ListNode {
     }
 }
 
-struct Solution;
+pub struct Solution;
 
 impl Solution {
+    #[allow(unused)]
     pub fn delete_duplicates(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
         let mut sentinel = ListNode { val: 0, next: head };
 

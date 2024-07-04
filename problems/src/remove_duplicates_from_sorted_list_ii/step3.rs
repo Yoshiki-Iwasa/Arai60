@@ -19,6 +19,7 @@ pub struct ListNode {
     pub next: Option<Box<ListNode>>,
 }
 
+#[allow(unused)]
 impl ListNode {
     #[inline]
     fn new(val: i32) -> Self {
@@ -26,9 +27,10 @@ impl ListNode {
     }
 }
 
-struct Solution;
+pub struct Solution;
 
 impl Solution {
+    #[allow(unused)]
     pub fn delete_duplicates(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
         let mut sentinel = Box::new(ListNode {
             val: i32::MIN,

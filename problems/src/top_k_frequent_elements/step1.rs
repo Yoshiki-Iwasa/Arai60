@@ -29,7 +29,7 @@
 
 pub struct Solution;
 
-use std::collections::{HashMap};
+use std::collections::HashMap;
 impl Solution {
     pub fn top_k_frequent(nums: Vec<i32>, k: i32) -> Vec<i32> {
         let mut map = HashMap::<i32, usize>::new();

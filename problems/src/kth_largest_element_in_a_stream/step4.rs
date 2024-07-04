@@ -8,6 +8,7 @@ struct KthLargest {
     heap: BinaryHeap<Reverse<i32>>,
 }
 
+#[allow(unused)]
 impl KthLargest {
     fn new(k: i32, nums: Vec<i32>) -> Self {
         let k = k as usize;
@@ -33,6 +34,7 @@ impl KthLargest {
 }
 
 // max heap sort
+#[allow(unused)]
 fn heap_sort_max(mut nums: Vec<i32>) -> Vec<i32> {
     let mut sorted_nums = vec![];
     build_max_heap(&mut nums);

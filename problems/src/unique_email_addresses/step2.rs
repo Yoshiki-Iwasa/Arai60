@@ -33,6 +33,7 @@
 use std::{collections::HashSet, str::FromStr};
 pub struct Solution;
 
+#[allow(unused)]
 // EmailAddress型の例
 pub struct EmailAddres {
     local_name: String,
@@ -63,11 +64,11 @@ impl FromStr for EmailAddres {
 }
 
 impl EmailAddres {
-    fn validate_local_name(local_name: &str) -> Result<(), EmailAddressValidaitonError> {
+    fn validate_local_name(_local_name: &str) -> Result<(), EmailAddressValidaitonError> {
         unimplemented!()
     }
 
-    fn validate_domain(domain: &str) -> Result<(), EmailAddressValidaitonError> {
+    fn validate_domain(_domain: &str) -> Result<(), EmailAddressValidaitonError> {
         unimplemented!()
     }
 }

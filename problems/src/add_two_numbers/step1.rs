@@ -29,6 +29,7 @@ pub struct ListNode {
     pub next: Option<Box<ListNode>>,
 }
 
+#[allow(unused)]
 impl ListNode {
     #[inline]
     fn new(val: i32) -> Self {
@@ -36,7 +37,7 @@ impl ListNode {
     }
 }
 
-struct Solution;
+pub struct Solution;
 
 impl Solution {
     pub fn add_two_numbers(

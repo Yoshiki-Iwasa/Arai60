@@ -19,6 +19,7 @@ pub struct ListNode {
     pub next: Option<Box<ListNode>>,
 }
 
+#[allow(unused)]
 impl ListNode {
     #[inline]
     fn new(val: i32) -> Self {
@@ -41,7 +42,7 @@ impl Solution {
             let next = current_node.next;
             current_node.next = reversed;
             reverse_list_recursive(Some(current_node), next)
-        };
+        }
         reverse_list_recursive(None, head)
     }
 }

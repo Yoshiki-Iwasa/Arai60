@@ -21,7 +21,7 @@ impl Solution {
     pub fn num_unique_emails(emails: Vec<String>) -> i32 {
         let mut forwarding_address_set = HashSet::new();
         for email in emails {
-            let Some((local_name, domain)) = email.split_once('@') else {
+            let Some((_local_name, domain)) = email.split_once('@') else {
                 eprintln!("Invalid Input. No '@' in the address. address:{}", email);
                 return i32::MIN;
             };
