@@ -13,6 +13,9 @@
 
   何を考えて解いていたか
   - 単純にDFSしながら最高値を更新していけばいいのでは
+    指摘後修正。BFSです
+    https://github.com/Yoshiki-Iwasa/Arai60/pull/23#discussion_r1664346928
+
   - O(N)で終わる
   - 最悪10^4 の深さがあるので再帰はやめておく
   - Rc, RfCellなどRust特有の事情による複雑さがある
