@@ -4,6 +4,7 @@ pub mod first_unique_character_in_a_string;
 pub mod group_anagrams;
 pub mod intersection_of_two_arrays;
 pub mod kth_largest_element_in_a_stream;
+pub mod minimum_depth_of_binary_tree;
 mod remove_duplicates_from_sorted_list;
 mod remove_duplicates_from_sorted_list_ii;
 pub mod reverse_linked_list;
