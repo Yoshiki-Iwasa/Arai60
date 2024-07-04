@@ -3,6 +3,11 @@
 
 // bidirectional bfsがちゃんと両方のqueueに入るようにする
 // begin側とend側でコピペするのを避けるために`IsFromBegin`を定義し、queue, visitedを一つにまとめる
+
+// メモ:
+// ハミング距離: 今回の問題はハミング距離を題材にしている
+// ハミング距離は、ある文字列を別の文字列に変形する際に必要な置換回数を計測したもの。
+
 pub struct Solution;
 
 use std::collections::{HashMap, HashSet, VecDeque};
