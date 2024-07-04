@@ -18,7 +18,6 @@
   -
 */
 
-use std::thread::current;
 
 // #[derive(PartialEq, Eq, Clone, Debug)]
 pub struct ListNode {
@@ -36,7 +35,7 @@ impl ListNode {
 struct Solution;
 
 impl Solution {
-    pub fn delete_duplicates(mut head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
+    pub fn delete_duplicates(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
         let mut sentinel = ListNode { val: 0, next: head };
 
         let mut prev = &mut sentinel;

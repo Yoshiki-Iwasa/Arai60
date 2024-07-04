@@ -35,7 +35,7 @@ struct KthLargest {
 }
 
 impl KthLargest {
-    fn new(k: i32, mut nums: Vec<i32>) -> Self {
+    fn new(k: i32, nums: Vec<i32>) -> Self {
         Self { k, nums }
     }
 
