@@ -44,7 +44,7 @@ type Sum = i32;
 type IndexPiar = (usize, usize);
 
 impl Solution {
-    pub fn k_smallest_pairs(nums1: Vec<i32>, nums2: Vec<i32>, mut k: i32) -> Vec<Vec<i32>> {
+    pub fn k_smallest_pairs(nums1: Vec<i32>, nums2: Vec<i32>, k: i32) -> Vec<Vec<i32>> {
         let k = k as usize;
         // (i32, i32, i32) = (sum, index1, index2)
         let mut heap: BinaryHeap<Reverse<(Sum, IndexPiar)>> = BinaryHeap::new();

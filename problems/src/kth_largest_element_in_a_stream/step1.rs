@@ -34,8 +34,9 @@ struct KthLargest {
     nums: Vec<i32>,
 }
 
+#[allow(unused)]
 impl KthLargest {
-    fn new(k: i32, mut nums: Vec<i32>) -> Self {
+    fn new(k: i32, nums: Vec<i32>) -> Self {
         Self { k, nums }
     }
 
@@ -101,7 +102,7 @@ impl KthLargest {
 //     }
 // }
 
-fn heap_sort(mut nums: Vec<i32>) -> Vec<i32> {
+pub fn heap_sort(mut nums: Vec<i32>) -> Vec<i32> {
     let mut sorted_nums = vec![];
     build_max_heap(&mut nums);
     while !nums.is_empty() {

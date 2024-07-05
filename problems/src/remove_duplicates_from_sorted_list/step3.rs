@@ -12,7 +12,7 @@
   時間計算量: O(n)
   空間計算量: O(1)
 */
-struct Solution;
+pub struct Solution;
 
 // Definition for singly-linked list.
 
@@ -22,6 +22,7 @@ pub struct ListNode {
     pub next: Option<Box<ListNode>>,
 }
 
+#[allow(unused)]
 impl ListNode {
     #[inline]
     fn new(val: i32) -> Self {

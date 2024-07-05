@@ -26,7 +26,7 @@ type IndexPair = (usize, usize);
 pub struct Solution;
 
 impl Solution {
-    pub fn k_smallest_pairs(nums1: Vec<i32>, nums2: Vec<i32>, mut k: i32) -> Vec<Vec<i32>> {
+    pub fn k_smallest_pairs(nums1: Vec<i32>, nums2: Vec<i32>, k: i32) -> Vec<Vec<i32>> {
         let k = k as usize;
         let mut heap: BinaryHeap<Reverse<(Sum, IndexPair)>> = BinaryHeap::new();
         let mut visited: HashSet<IndexPair> = HashSet::new();
