@@ -1,0 +1,41 @@
+name: Cargo Clippy
+
+on:
+  pull_request:
+    branches: main
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  clippy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Extract Rust channel version
+        id: extract
+        run: |
+          VERSION=$(grep "channel =" rust-toolchain | awk -F'"' '{print $2}')
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          toolchain: ${{ steps.extract.outputs.version }}
+          components:
+            clippy
+
+      - uses: reviewdog/action-setup@v1
+        with:
+          reviewdog_version: latest # Optional. [latest,nightly,v.X.Y.Z]
+
+      - name: Run reviewdog
+        env:
+          REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          reviewdog -runners=clippy \
+            -reporter=github-pr-review \
+            -filter-mode=nofilter \
+            -fail-on-error=true
