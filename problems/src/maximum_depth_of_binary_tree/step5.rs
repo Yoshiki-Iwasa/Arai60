@@ -20,11 +20,7 @@ impl TreeNode {
     }
 }
 
-type ValueDepthPair = (i32, u32);
-type NodeDepthPair = (Rc<RefCell<TreeNode>>, u32);
-
 use std::cell::RefCell;
-use std::collections::{HashMap, HashSet, VecDeque};
 use std::rc::Rc;
 impl Solution {
     pub fn max_depth_recursive(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
