@@ -1,0 +1,5 @@
+runner:
+  clippy:
+    cmd: cargo clippy -q --message-format=short
+    format: clippy
+    level: warning
