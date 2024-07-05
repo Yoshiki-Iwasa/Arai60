@@ -52,7 +52,7 @@ impl Solution {
                 }
                 char_count[char as usize - offset] += 1;
             }
-            anagram_map.entry(char_count).or_insert(vec![]).push(s);
+            anagram_map.entry(char_count).or_default().push(s);
         }
 
         anagram_map.into_values().collect::<Vec<_>>()
@@ -72,7 +72,6 @@ impl Solution {
                     let mut anagram_map = anagram_map?;
                     let char_count =
                         s.chars()
-                            .into_iter()
                             .fold(Ok([0_u8; 26]), |char_count, char| {
                                 let mut char_count = char_count?;
                                 if !char.is_ascii_lowercase() {

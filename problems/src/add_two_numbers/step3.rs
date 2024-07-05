@@ -65,7 +65,7 @@ impl Solution {
         carry: Carry,
     ) {
         match (list1, list2, carry) {
-            (None, None, Carry::Off) => return,
+            (None, None, Carry::Off) => (),
             (l1, l2, carr) => {
                 let (val1, next1) = l1.map_or((0, None), |node1| (node1.val, node1.next));
                 let (val2, next2) = l2.map_or((0, None), |node2| (node2.val, node2.next));

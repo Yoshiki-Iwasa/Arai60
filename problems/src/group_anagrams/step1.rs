@@ -57,9 +57,9 @@ impl Solution {
     pub fn group_anagrams(strs: Vec<String>) -> Vec<Vec<String>> {
         let mut anagram_map = HashMap::<Vec<char>, Vec<String>>::new();
         strs.into_iter().for_each(|s| {
-            let mut chars = s.chars().into_iter().collect::<Vec<_>>();
+            let mut chars = s.chars().collect::<Vec<_>>();
             chars.sort();
-            anagram_map.entry(chars).or_insert(vec![]).push(s);
+            anagram_map.entry(chars).or_default().push(s);
         });
 
         anagram_map.into_values().collect::<Vec<_>>()

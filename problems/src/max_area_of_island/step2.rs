@@ -54,7 +54,7 @@ impl Solution {
             }
         }
 
-        max_land_count as i32
+        max_land_count
     }
 
     fn is_out_of_grid(grid: &[Vec<i32>], y: &usize, x: &usize) -> bool {

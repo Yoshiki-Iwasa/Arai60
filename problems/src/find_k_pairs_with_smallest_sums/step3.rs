@@ -32,7 +32,7 @@ impl Solution {
         let mut visited: HashSet<IndexPair> = HashSet::new();
         let mut ans: Vec<Vec<i32>> = vec![];
 
-        let (Some(n1), Some(n2)) = (nums1.get(0), nums2.get(0)) else {
+        let (Some(n1), Some(n2)) = (nums1.first(), nums2.first()) else {
             return vec![];
         };
 

@@ -18,7 +18,7 @@ impl Solution {
                 let offset = 'a' as usize;
                 char_count[char as usize - offset] += 1;
             }
-            anagram_map.entry(char_count).or_insert(vec![]).push(s);
+            anagram_map.entry(char_count).or_default().push(s);
         }
         anagram_map.into_values().collect::<Vec<_>>()
     }

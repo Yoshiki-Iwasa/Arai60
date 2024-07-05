@@ -43,7 +43,7 @@ impl Solution {
 
         let mut ans = vec![];
 
-        while ans.len() < k && heap.len() > 0 {
+        while ans.len() < k && !heap.is_empty() {
             // 最小のsumのときの情報をpopする
             let Reverse((_, nums1_index, nums2_index)) = heap.pop().expect("ensured by heap.len()");
 

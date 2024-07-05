@@ -23,7 +23,7 @@ impl Solution {
 
         let (top_k, _) = frequency_vec.split_at(k);
 
-        top_k.into_iter().map(|(num, _)| *num).collect::<Vec<_>>()
+        top_k.iter().map(|(num, _)| *num).collect::<Vec<_>>()
     }
 
     pub fn top_k_frequent_heap(nums: Vec<i32>, k: i32) -> Vec<i32> {

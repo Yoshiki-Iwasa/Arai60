@@ -73,7 +73,7 @@ impl Solution {
                 prev_node.next = current_node.next.take();
                 delete_node_recursive(prev_node);
             } else {
-                delete_node_recursive(&mut current_node);
+                delete_node_recursive(current_node);
             }
         }
 

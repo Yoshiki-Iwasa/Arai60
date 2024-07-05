@@ -56,7 +56,6 @@ impl Solution {
                         return;
                     };
                     node_sum.next = Some(Box::new(ListNode { val: 1, next: None }));
-                    return;
                 }
                 (None, Some(node2)) => {
                     let val2 = if carry { node2.val + 1 } else { node2.val };
