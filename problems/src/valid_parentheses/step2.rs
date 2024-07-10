@@ -44,12 +44,7 @@ impl Solution {
                 continue;
             };
 
-            let is_match = match (top, c) {
-                ('(', ')') => true,
-                ('{', '}') => true,
-                ('[', ']') => true,
-                _ => false,
-            };
+            let is_match = matches!((top, c), ('(', ')') | ('{', '}') | ('[', ']'));
 
             if is_match {
                 stack.pop();
