@@ -35,7 +35,7 @@ impl Solution {
         let mut stack = VecDeque::new();
         let root = Rc::new(RefCell::new(TreeNode::new(i32::MIN)));
 
-        // 閉区間でやってみる
+        // 開区間でやってみる
         stack.push_front((Rc::clone(&root), 0, nums.len()));
 
         while let Some((node, begin, end)) = stack.pop_front() {
