@@ -52,7 +52,7 @@ impl Solution {
         let node_ref = node.borrow();
         let node_val = node_ref.val as i64;
 
-        if lower_bound < node_val && node_val < upper_bound {
+        if !(lower_bound < node_val && node_val < upper_bound) {
             return false;
         }
 
