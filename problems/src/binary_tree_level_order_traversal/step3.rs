@@ -42,7 +42,7 @@ impl Solution {
             return vec![];
         };
 
-        let mut queue = VecDeque::new();
+        let mut queue = VecDeque::<Rc<RefCell<TreeNode>>>::new();
         let mut level_order_nodes = vec![];
 
         queue.push_back(Rc::clone(&root));
