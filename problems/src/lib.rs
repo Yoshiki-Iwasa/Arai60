@@ -1,5 +1,6 @@
 pub mod add_two_numbers;
 pub mod find_k_pairs_with_smallest_sums;
+pub mod find_minimum_in_rotated_sorted_array;
 pub mod first_unique_character_in_a_string;
 pub mod group_anagrams;
 pub mod intersection_of_two_arrays;
