@@ -14,7 +14,7 @@
 */
 
 // 多分自分が面接で書くとしたらis_rotatedを確認すると思う
-// 直感的にもrotatedとis rotatedは分けたくなると思うので分ける実装も残しておく
+// 直感的にもrotatedとそうでない場合は分けたくなると思うので分ける実装も残しておく
 
 pub struct Solution;
 
