@@ -59,6 +59,7 @@ impl Solution {
     }
 
     // 関数でつなげて書いてみたが、あまり向かなかった
+    #[allow(clippy::manual_try_fold)]
     pub fn group_anagrams_functional(strs: Vec<String>) -> Vec<Vec<String>> {
         strs.iter()
             .fold(
@@ -70,21 +71,19 @@ impl Solution {
                 )),
                 |anagram_map, s| {
                     let mut anagram_map = anagram_map?;
-                    let char_count =
-                        s.chars()
-                            .fold(Ok([0_u8; 26]), |char_count, char| {
-                                let mut char_count = char_count?;
-                                if !char.is_ascii_lowercase() {
-                                    return Err(format!(
-                                        "Invalid string. Contains non-ascii-lowercase. s: {}",
-                                        &s,
-                                    ));
-                                }
+                    let char_count = s.chars().fold(Ok([0_u8; 26]), |char_count, char| {
+                        let mut char_count = char_count?;
+                        if !char.is_ascii_lowercase() {
+                            return Err(format!(
+                                "Invalid string. Contains non-ascii-lowercase. s: {}",
+                                &s,
+                            ));
+                        }
 
-                                let offset = 'a' as usize;
-                                char_count[char as usize - offset] += 1;
-                                Ok(char_count)
-                            })?;
+                        let offset = 'a' as usize;
+                        char_count[char as usize - offset] += 1;
+                        Ok(char_count)
+                    })?;
 
                     anagram_map
                         .entry(char_count)

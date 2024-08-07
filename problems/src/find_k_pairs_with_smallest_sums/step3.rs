@@ -66,6 +66,7 @@ impl Solution {
         heap: &mut BinaryHeap<Reverse<(Sum, IndexPair)>>,
     ) {
         let (index1, index2) = pair;
+        #[allow(clippy::single_match)]
         match (
             nums1.get(*index1),
             nums2.get(*index2),
