@@ -21,16 +21,16 @@ pub fn min_sub_array_len(target: i32, nums: Vec<i32>) -> i32 {
     let mut minimum_len = INITIAL_VAL;
 
     let mut sum = 0;
-    let mut head = 0;
-    let mut tail = 0;
-    while tail < nums.len() {
-        sum += nums[tail];
+    let mut left = 0;
+    let mut right = 0;
+    while right < nums.len() {
+        sum += nums[right];
         while sum >= target {
-            minimum_len = minimum_len.min((tail - head + 1) as i32);
-            sum -= nums[head];
-            head += 1
+            minimum_len = minimum_len.min((right - left + 1) as i32);
+            sum -= nums[left];
+            left += 1
         }
-        tail += 1
+        right += 1
     }
 
     match minimum_len == INITIAL_VAL {

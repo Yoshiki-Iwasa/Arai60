@@ -25,11 +25,15 @@
 
   改善する時にかんがえたこと
   - 内部のwhile条件 sum >= targetにすることで
-    head, tailを閉区間として扱える
-    tailをforで回してもいけるが、head, tailを同時に宣言したほうが意図が伝わりやすいかなと思った
+    left, rightを閉区間として扱える
+    rightをforで回してもいけるが、left, rightを同時に宣言したほうが意図が伝わりやすいかなと思った
 
   - 累積和を使う回答について
     right <= nums.len()とすることでrightがnumsに対して開区間として振る舞うことを示したかった
+
+  - left -> left
+    right -> right にした
+    https://github.com/Yoshiki-Iwasa/Arai60/pull/42#discussion_r1708937220
 
 
 */
@@ -42,19 +46,19 @@ impl Solution {
 
         let mut minimum_len = INITIAL_VAL;
         let mut sum = 0;
-        let mut head = 0;
-        let mut tail = 0;
+        let mut left = 0;
+        let mut right = 0;
 
-        while tail < nums.len() {
-            sum += nums[tail];
+        while right < nums.len() {
+            sum += nums[right];
 
             while sum >= target {
-                minimum_len = minimum_len.min((tail - head + 1) as i32);
-                sum -= nums[head];
-                head += 1
+                minimum_len = minimum_len.min((right - left + 1) as i32);
+                sum -= nums[left];
+                left += 1
             }
 
-            tail += 1
+            right += 1
         }
 
         match minimum_len == INITIAL_VAL {
