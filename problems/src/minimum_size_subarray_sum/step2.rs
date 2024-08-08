@@ -31,8 +31,8 @@
   - 累積和を使う回答について
     right <= nums.len()とすることでrightがnumsに対して開区間として振る舞うことを示したかった
 
-  - left -> left
-    right -> right にした
+  - head -> left
+    tail -> right にした
     https://github.com/Yoshiki-Iwasa/Arai60/pull/42#discussion_r1708937220
 
 
