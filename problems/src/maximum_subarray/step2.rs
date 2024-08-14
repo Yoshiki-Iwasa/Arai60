@@ -38,8 +38,6 @@
     どちらにしろTLEだけど
 */
 
-use std::i32;
-
 pub struct Solution;
 
 impl Solution {
