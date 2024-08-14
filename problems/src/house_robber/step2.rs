@@ -17,7 +17,7 @@
 
   他の人のコードを読んで考えたこと
   - https://github.com/goto-untrapped/Arai60/pull/36#pullrequestreview-2176783639
-  -
+  - https://github.com/fhiyo/leetcode/pull/36
 
   他の想定ユースケース
   -
