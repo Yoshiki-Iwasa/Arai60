@@ -46,7 +46,7 @@ impl Solution {
                     true => {
                         // 親候補の値とinorderの要素が一致するとき
                         // parent_candidateを根としたとき、inorderにおける(左部分木 -> 根) が終わったということ
-                        // これ以降の値は右部分木に入るということを意味する
+                        // 現在のnodeはparent_candidateの以上で右部分木をもつノードの最初の右子になる
                         while stack
                             .last()
                             .is_some_and(|top| top.borrow().val == inorder[inorder_index])
