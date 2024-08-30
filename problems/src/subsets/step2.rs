@@ -21,7 +21,14 @@
     yieldになれないので読むのがちょっと大変
     一番素直なのかもしれない。先に思いつくべきはこっちだったか？
 
-  -
+  - https://github.com/goto-untrapped/Arai60/pull/39/files#r1683033311
+    バックトラックとしてはこれが一番しっくりくる
+
+  - https://github.com/goto-untrapped/Arai60/pull/39/files#r1683033311
+    bit_patternをシフトさせてbitを取り出す全探索もあるのか
+    このパターンは書いたことなかった
+
+
 
 
   他の想定ユースケース
