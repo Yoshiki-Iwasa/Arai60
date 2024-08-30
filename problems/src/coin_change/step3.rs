@@ -25,11 +25,11 @@ impl Solution {
         let mut minimum_num_of_coins = vec![Self::CAN_NOT_MAKE; amount + 1];
         minimum_num_of_coins[0] = 0;
         for money in 0..=amount {
-            for coin in &coins {
-                if money < *coin as usize {
+            for &coin in &coins {
+                if money < coin as usize {
                     continue;
                 }
-                let complement = money - *coin as usize;
+                let complement = money - coin as usize;
                 if minimum_num_of_coins[complement] != Self::CAN_NOT_MAKE {
                     minimum_num_of_coins[money] =
                         minimum_num_of_coins[money].min(minimum_num_of_coins[complement] + 1)
