@@ -1,6 +1,7 @@
 pub mod add_two_numbers;
 pub mod find_k_pairs_with_smallest_sums;
 pub mod first_unique_character_in_a_string;
+pub mod generate_parentheses;
 pub mod group_anagrams;
 pub mod intersection_of_two_arrays;
 pub mod kth_largest_element_in_a_stream;
