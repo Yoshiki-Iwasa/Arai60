@@ -47,7 +47,7 @@ impl Solution {
     // backtrackの改善版
     // Vec<String>を返すようにし、open / closeの残り使用可能数を引数として渡す
     pub fn generate_parenthesis_1(n: i32) -> Vec<String> {
-        Self::create_parenthesis(n as usize, n as usize, &mut String::new())
+        Self::create_valid_parentheses(n as usize, n as usize, &mut String::new())
     }
 
     fn create_valid_parentheses(
@@ -75,7 +75,7 @@ impl Solution {
         // close parenを入れて良い条件
         if rest_close_count > 0 && rest_close_count > rest_open_count {
             parentheses.push(')');
-            valid_parentheses.extend(Self::create_parenthesis(
+            valid_parentheses.extend(Self::create_valid_parentheses(
                 rest_open_count,
                 rest_close_count - 1,
                 parentheses,
