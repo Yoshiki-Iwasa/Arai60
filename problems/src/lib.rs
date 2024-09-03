@@ -9,6 +9,7 @@ pub mod remove_duplicates_from_sorted_list;
 pub mod remove_duplicates_from_sorted_list_ii;
 pub mod reverse_linked_list;
 pub mod subarray_sum_equals_k;
+pub mod subsets;
 pub mod top_k_frequent_elements;
 pub mod two_sum;
 pub mod unique_email_addresses;
