@@ -14,7 +14,9 @@
   何を考えて解いていたか
   - どっかでpermutationを解いたとき、next_permutationをつかった解法をやったのでそれを思い出しながら
     最後に昇順になってるindexを取得する。
-    そのindexより後ろで
+    そのindexより最右でおおきいやつを取得
+    swap
+    reverse
 
   想定ユースケース
   -
@@ -24,12 +26,7 @@
 */
 
 pub struct Solution;
-// 1,2,3,4
-// 1,2,4,3
-// 1,3,4,2 -> 1,3,2,4
-// 1,3,4,2
-// 2,3,4,1 -> 2,1,4,3
-// 4,3,2,1
+
 impl Solution {
     pub fn next_permutation(nums: &mut [i32]) {
         // 昇順になる最右のindexを求める
