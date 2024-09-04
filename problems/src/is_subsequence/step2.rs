@@ -23,6 +23,10 @@
     正規表現はかけない気がする...
     でもなるほどと思った
 
+  - https://discord.com/channels/1084280443945353267/1201211204547383386/1232001549098680381
+    whileの条件をいじれば2pointerもきれいに書けるか？
+
+
   - https://github.com/nittoco/leetcode/pull/16/files#diff-4213dd9e9bb2e47ed3241ed4250c36f5193149962dd86c6163c7d6b52b8b2668R50
     他でもみたwhile trueの表現
     while trueできれば避けたいので多分本番では書かないけど、表現としてはあることを頭にいれておく
@@ -107,19 +111,17 @@ impl Solution {
     }
 
     // two pointers
-    // s_index == s_chars.len() を二回書かねばならず、ちょっときたない
     pub fn is_subsequence_4(s: String, t: String) -> bool {
         let mut s_index = 0;
+        let mut t_index = 0;
         let s_chars = s.chars().collect::<Vec<_>>();
+        let t_chars = t.chars().collect::<Vec<_>>();
 
-        for t_c in t.chars() {
-            let Some(&s_c) = s_chars.get(s_index) else {
-                return s_index == s_chars.len();
-            };
-
+        while let (Some(t_c), Some(s_c)) = (s_chars.get(s_index), t_chars.get(t_index)) {
             if s_c == t_c {
                 s_index += 1;
             }
+            t_index += 1;
         }
 
         s_index == s_chars.len()
