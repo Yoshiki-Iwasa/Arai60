@@ -1,4 +1,6 @@
 // Step4
+// derive(Ord)で順序を決めてみる
+// required_room_countを求める時の処理をループにしてみる
 
 pub struct Solution;
 
