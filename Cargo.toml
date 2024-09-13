@@ -1,7 +1,7 @@
 [workspace]
 resolver="2"
 
-members=["problems"]
+members=["problems", "algo"]
 
 [workspace.lints.clippy]
 all = {level = "warn", priority = 0}
