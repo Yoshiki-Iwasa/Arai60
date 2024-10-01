@@ -9,9 +9,11 @@ pub struct Solution;
 impl Solution {
     // Topological sort by bfs
     pub fn can_finish(num_courses: i32, prerequisites: Vec<Vec<i32>>) -> bool {
-        let num_courses = num_courses as usize;
+        let mut graph = HashMap::<i32, (usize, Vec<i32>)>::with_capacity(num_courses as usize);
 
-        let mut graph = HashMap::<i32, (usize, Vec<i32>)>::with_capacity(num_courses);
+        (0..num_courses).for_each(|n| {
+            graph.insert(n, (0, vec![]));
+        });
 
         prerequisites.into_iter().for_each(|prerequisite| {
             let (_, dest_nodes) = graph.entry(prerequisite[0]).or_insert((0, vec![]));
