@@ -53,8 +53,8 @@ impl Solution {
     ) -> Option<Rc<RefCell<TreeNode>>> {
         match (root1, root2) {
             (None, None) => None,
-            (None, Some(node2)) => Some(node2),
-            (Some(node1), None) => Some(node1),
+            (None, Some(node2)) => Some(node2.clone()),
+            (Some(node1), None) => Some(node1.clone()),
             (Some(node1), Some(node2)) => {
                 let mut node1 = node1.borrow_mut();
                 let mut node2 = node2.borrow_mut();
