@@ -4,6 +4,7 @@ pub mod first_unique_character_in_a_string;
 pub mod group_anagrams;
 pub mod intersection_of_two_arrays;
 pub mod kth_largest_element_in_a_stream;
+pub mod longest_increasing_subsequence;
 pub mod max_area_of_island;
 pub mod remove_duplicates_from_sorted_list;
 pub mod remove_duplicates_from_sorted_list_ii;
