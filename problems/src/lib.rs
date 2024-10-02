@@ -1,4 +1,5 @@
 pub mod add_two_numbers;
+pub mod coin_change;
 pub mod find_k_pairs_with_smallest_sums;
 pub mod first_unique_character_in_a_string;
 pub mod group_anagrams;
