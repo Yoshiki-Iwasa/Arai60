@@ -5,6 +5,7 @@ pub mod group_anagrams;
 pub mod intersection_of_two_arrays;
 pub mod kth_largest_element_in_a_stream;
 pub mod max_area_of_island;
+pub mod pow_x_n;
 pub mod remove_duplicates_from_sorted_list;
 pub mod remove_duplicates_from_sorted_list_ii;
 pub mod reverse_linked_list;
